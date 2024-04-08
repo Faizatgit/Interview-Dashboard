@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(https://media.istockphoto.com/id/937025540/photo/abstract-green-defocused-background-nature.jpg?s=2048x2048&w=is&k=20&c=0hfkP4q0xVaCVK5pLcodxVCdWe41wVp6DfDNkpAlb9g=)
+    background-image: url(https://images.unsplash.com/photo-1614853035986-b230d7d5679c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D );
+    background-size: cover;
 }
 
 button {
