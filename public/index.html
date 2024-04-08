@@ -33,8 +33,10 @@
     </div>
     </div>
     <p id="status"></p>
-    </div>
+   
 
+    </div>
+    <button id="logout-btn">Logout</button>
     <!-- Import socket.io script -->
     <script src="/socket.io/socket.io.js"></script>
 
@@ -170,7 +172,18 @@
 
         window.addEventListener('load', getAndUpdateUsers);
         window.addEventListener('load', getUserMedia);
+        const handleLogout = () => {
+            // Perform logout actions here, such as disconnecting from the server or redirecting to a logout page
+            // For example, you can emit a logout event to the server and handle it on the server-side
+            // socket.emit('logout');
+            // Redirect to logout page
+            window.location.href = '/signup';
+        };
+
+        // Add event listener to the logout button
+        document.getElementById('logout-btn').addEventListener('click', handleLogout);
+   
     </script>
 </body>
 
-</html>
+</html> 
