@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://media.istockphoto.com/id/937025540/photo/abstract-green-defocused-background-nature.jpg?s=2048x2048&w=is&k=20&c=0hfkP4q0xVaCVK5pLcodxVCdWe41wVp6DfDNkpAlb9g=)
 }
 
 button {
@@ -23,10 +24,10 @@ button {
 #remote-video {
     position: absolute;
     border: 2px solid blue;
-    height: 550px;
-    width: 550px;
-    top: 20px;
-    right: 300px
+    height: 350px;
+    width: 350px;
+    top: 45%;
+    right: 20px
 }
 
 #status {
@@ -36,17 +37,37 @@ button {
     left: 30px;
 }
 
-h3{
-    color: blueviolet;
+h3 {
+    color: black;
 }
 
 #Compilers {
-    background-color: #ff9f43; /* Vibrant orange */
+    background-color: lightblue;
+    display: inline-block;
+    padding-left: 50px;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 80px;
+}
+
+a {
+    text-decoration: none;
+    align-items: center;
+    color: darkorchid;
+    font-family: cursive;
+    font-size: large;
 }
 
 #Compilers h1 {
-    color: #fff; /* White text */
+    color: black;
+    font-family: system-ui;
+}
+
+a:hover {
+    color: red;
+    background-color: black;
+}
+
+#logout-btn{
+    background-color: red;
 }
