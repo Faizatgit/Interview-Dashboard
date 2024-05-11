@@ -8,6 +8,7 @@ const path = require('path');
 const User = require('./models/user.js');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 
 const app = express();
@@ -28,11 +29,31 @@ app.use(bodyParser.json());
 app.set('view engine' , 'ejs');
 app.set('views' , path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static( path.resolve('./public') ));
+app.use(session({
+    secret: 'my_secret_key',
+    resave: false,
+    saveUninitialized: false
+  }));
+
+
+function requireLogin(req, res, next) {
+    if (req.session && req.session.user) {
+        return next();
+
+    } else {
+        return res.redirect('/login'); // Redirect to login page if not authenticated
+    }
+  }
 
 //Routes
 
 app.get('/signup' , (req,res) => {
     res.render('signup');
+});
+
+app.get('/homepage' ,requireLogin ,async(req,res)=>{
+    res.render('homepage');
 });
 
 app.post('/signup', async (req, res) => {
@@ -78,7 +99,9 @@ app.post('/login', async (req,res) => {
         if( await bCrypt.compare(password,user.password))
         {
             // res.status(200).send('Successfully Loged in!');
+            req.session.user = user;
             console.log("Login successful");
+            res.redirect('/homepage');
         }
         else{
             res.status(401).send("Incorrect Password");
@@ -88,7 +111,6 @@ app.post('/login', async (req,res) => {
         console.err(err);
         res.status(500).send('Error loging in!');
     }
-    res.redirect('/interview');
 
 });
 const users = new Map();
@@ -106,7 +128,7 @@ io.on('connection', socket => {
 
         socket.to(to).emit('incomming:call', { from: socket.id, offer: fromOffer });
     });
-
+    
     socket.on('call:accepted', data => {
         const { answere, to } = data;
         socket.to(to).emit('incomming:answere', { from: socket.id, offer: answere })
@@ -120,13 +142,10 @@ io.on('connection', socket => {
     });
 });
 
-
-app.use(express.static( path.resolve('./public') ));
-
-app.get('/interview',(req,res)=>{
+app.get('/interview',requireLogin, async(req,res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 
-})
+});
 
 app.get('/users', async(req, res) => {
     return res.json(Array.from(users));
@@ -138,5 +157,18 @@ app.get('/users', async(req, res) => {
     //     res.status(500).send('Error fetching users');
     // }
 });
+
+app.get('/logout', (req, res) => {
+
+    // Destroy the user's session
+    req.session.destroy(err => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Error logging out');
+        }
+        res.redirect('/login'); // Redirect the user to the login page after logout
+    });
+});
+
 
 server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
