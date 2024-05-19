@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <link rel="stylesheet" href="style.css">
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview DashBoard</title>
-
-</head>
-
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <!-- Navbar content -->
-    </nav>
-
-    <nav class="navbar navbar-dark bg-primary">
-        <!-- Navbar content -->
-    </nav>
-
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <!-- Navbar content -->
-    </nav>
-    <div>
-        <h3>Your Id: <span id="myId"></span></h3>
-        <h3>Online Users (click to connect)</h3>
-        <div id="users">
-
-        </div>
-        <video id="local-video"></video>
-        <video id="remote-video"></video>
-    </div>
-    <div id="Compilers">
-        <h1>COMPILERS</h1>
-        <a href="https://www.programiz.com/cpp-programming/online-compiler/">CPP</a>
-        <br>
-        <br>
-        <a href="https://www.programiz.com/java-programming/online-compiler/">Java</a>
-        <br>
-        <br>
-        <a href="https://www.programiz.com/javascript/online-compiler/">Javascript</a>
-        <br>
-        <br>
-        <a href="https://www.programiz.com/python-programming/online-compiler/">Python</a>
-        <br>
-        <br>
-        <a href="https://www.programiz.com/sql/online-compiler/">SQL</a>
-        <br>
-        <br>
-        <a href="https://www.programiz.com/php/online-compiler/">PHP</a>
-    </div>
-    </div>
-    <p id="status"></p>
-
-
-    </div>
-    <!-- <button id="logout-btn">Logout</button> -->
-    <!-- Import socket.io script -->
-    <script src="/socket.io/socket.io.js"></script>
-
-    <script>
-        const socket = io();
+const socket = io();
 
         const peer = new RTCPeerConnection({
             iceServers: [
@@ -203,8 +139,3 @@
 
         // Add event listener to the logout button
         document.getElementById('logout-btn').addEventListener('click', handleLogout);
-   
-    </script>
-</body>
-
-</html>
