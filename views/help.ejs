@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.2);
+        }
+
+        .back-btn {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help Page</h1>
+        <p>
+            If you need assistance or have any questions, feel free to contact us using the options below or connect with us on social media.
+        </p>
+        <ul>
+            <li>
+                <a href="#" class="btn contact-btn">Contact Customer Support</a>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+                    <p><strong>Phone:</strong> +1-123-456-7890</p>
+                    <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="btn support-btn">Support on Social Media</a>
+                <div class="social-media">
+                    <a href="#" class="facebook"><img src="facebook-logo.png" alt="Facebook"></a>
+                    <a href="#" class="twitter"><img src="twitter-logo.png" alt="Twitter"></a>
+                </div>
+            </li>
+            <li>For general inquiries, visit our FAQ page</li>
+        </ul>
+        <a href="/quiz_homepage" class="btn back-btn">Back to Quiz</a>
+    </div>
+</body>
+</html>

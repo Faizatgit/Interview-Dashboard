@@ -1,0 +1,87 @@
+[
+    {
+        "str": "How many times will GeeksQuiz be printed in the below program?\n#include <stdio.h>\nint main()\n{\n\tint i=1024;\n\tfor (; i; i >>= 1)\n\t\tprintf(\"GeeksQuiz\");\n\treturn 0;\n}",
+        "a": "A. 10",
+        "b": "B. 11",
+        "c": "C. infinite loop",
+        "d": "D. compile-time error",
+        "right": "B"
+    },
+    {
+        "str": "What is the output of the below program?\n#include <stdio.h>\nint main()\n{\n\tint i=0;\n\tswitch (i)\n\t{\n\t\tcase '0': printf(\"Geeks\");\n\t\t\tbreak;\n\t\tcase '1': printf(\"Quiz\");\n\t\t\tbreak;\n\t\tdefault: printf(\"GeeksQuiz\");\n\t}\n\treturn 0;\n}",
+        "a": "A. Geeks",
+        "b": "B. Quiz",
+        "c": "C. GeeksQuiz",
+        "d": "D. compile-time error",
+        "right": "C"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\n#define EVEN 0\n#define ODD 1\nint main()\n{\n\tint i=3;\n\tswitch (i & 1)\n\t{\n\t\tcase EVEN: printf(\"Even\");\n\t\t\tbreak;\n\t\tcase ODD: printf(\"Odd\");\n\t\t\tbreak;\n\t\tdefault: printf(\"Default\");\n\t}\n\treturn 0;\n}",
+        "a": "A. Even",
+        "b": "B. Odd",
+        "c": "C. Default",
+        "d": "D. compile-time error",
+        "right": "B"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\nint main()\n{\n\tint i;\n\tif (printf(\"0\"))\n\t\ti = 3;\n\telse\n\t\ti = 5;\n\tprintf(\"%d\", i);\n\treturn 0;\n}",
+        "a": "A. 3",
+        "b": "B. 5",
+        "c": "C. 03",
+        "d": "D. 05",
+        "right": "C"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\nint main()\n{\n\tint c = 5, no = 10;\n\tdo\n\t{\n\t\tno /= c;\n\t} while(c--);\n\tprintf (\"%dn\", no);\n\treturn 0;}",
+        "a": "A. run-time error",
+        "b": "B. 1",
+        "c": "C. 0",
+        "d": "D. compile-time error",
+        "right": "A"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\nint main()\n{\n\tint check = 20, arr[] = {10, 20, 30};\n\tswitch (check)\n\t{\n\t\tcase arr[0]: printf(\"Geeks \");\n\t\tcase arr[1]: printf(\"Quiz \");\n\t\tcase arr[2]: printf(\"GeeksQuiz\");\n\t}\n\treturn 0;\n}",
+        "a": "A. Quiz",
+        "b": "B. Quiz GeeksQuiz",
+        "c": "C. GeeksQuiz",
+        "d": "D. compile-time error",
+        "right": "D"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\nint main()\n{\n\tint a=5;switch(a)\n\t{\n\t\tdefault:\n\t\t\ta = 4;\n\t\tcase 6:\n\t\t\ta--;\n\t\tcase 5:\n\t\t\ta = a+1;\n\t\tcase 1:\n\t\t\ta = a-1;\n\t}\n\tprintf(\"%d\", a);\n\treturn 0;}",
+        "a": "A. 3",
+        "b": "B. 4",
+        "c": "C. 5",
+        "d": "D. none of these",
+        "right": "C"
+    },
+    {
+        "str": "Which combination of the integer variables x, y and z makes the variable a get the value 4 in the following expression?\n\ta = ( x > y ) ? (( x > z ) ? x : z) : (( y > z ) ? y : z )",
+        "a": "A. x = 6, y = 5, z = 3",
+        "b": "B. x = 5, y = 4, z = 5",
+        "c": "C. x = 6, y = 3, z = 5",
+        "d": "D. x = 3, y = 4, z = 2",
+        "right": "D"
+    },
+    {
+        "str": "What is going to happen when we compile and run the following C program?\n#include <stdio.h>\nint main()\n{\n\tint i = 1, j;\n\tfor ( ; ; )\n\t{ \n\t\tif (i)\n\t\t\tj = --i;\n\t\tif (j < 10)\n\t\t\tprintf(\"GeeksQuiz\", j++);\n\t\telse\n\t\t\tbreak;\n\t}\n\treturn 0;\n}",
+        "a": "A. print GeeksQuiz 10 times",
+        "b": "B. compile-time error",
+        "c": "C. infinite loop",
+        "d": "D. print GeeksQuiz 9 times",
+        "right": "A"
+    },
+    {
+        "str": "Predict the output of the below program:\n#include <stdio.h>\nint main()\n{\n\tunsigned int i = 65000;\n\twhile (i++ != 0);\n\tprintf(\"%d\", i);\n\treturn 0;\n}",
+        "a": "A. infinite loop",
+        "b": "B. 0",
+        "c": "C. 1",
+        "d": "D. run-time error",
+        "right": "C"
+    }
+]
+  
+  
+  
+  
+  

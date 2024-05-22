@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        p {
+            color: #6c757d;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #6c757d;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rules</h1>
+        <p>Here are the rules for the quiz:</p>
+        <ol>
+            <li>Each question has four options.</li>
+            <li>Select the correct answer from the options.</li>
+            <li>After selecting an answer, click the "Next" button to proceed to the next question.</li>
+            <li>Once you've answered all questions, click the "Submit" button to see your score.</li>
+        </ol>
+        <a href="/quiz_homepage" class="back-btn">Back to Quiz</a>
+    </div>
+</body>
+</html>

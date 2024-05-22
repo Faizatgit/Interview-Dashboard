@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .question {
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    .question h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+    .question p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .options input[type="radio"] {
+      display: none;
+    }
+    .options input[type="radio"] + label {
+      position: relative;
+      padding-left: 30px;
+      font-size: 16px;
+      color: #555;
+    }
+    .options input[type="radio"] + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+    }
+    .options input[type="radio"]:checked + label:before {
+      background-color: #007bff;
+    }
+    button {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="/quiz" method="POST">
+      <% questions.forEach((question, index) => { %>
+        <div class="question">
+          <h2>Question <%= index + 1 %>:</h2>
+          <p><%= question.str %></p>
+          <div class="options">
+            <input type="radio" id="q<%= index %>a" name="question<%= index %>" value="A">
+            <label for="q<%= index %>a"><%= question.a %></label>
+            <input type="radio" id="q<%= index %>b" name="question<%= index %>" value="B">
+            <label for="q<%= index %>b"><%= question.b %></label>
+            <input type="radio" id="q<%= index %>c" name="question<%= index %>" value="C">
+            <label for="q<%= index %>c"><%= question.c %></label>
+            <input type="radio" id="q<%= index %>d" name="question<%= index %>" value="D">
+            <label for="q<%= index %>d"><%= question.d %></label>
+          </div>
+        </div>
+      <% }) %>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+

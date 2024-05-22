@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Homepage</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-container a {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-container a:hover {
+            background-color: #45a049;
+        }
+
+        /* Back to Homepage Button */
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Quiz</h1>
+        <p>Test your knowledge and have fun!</p>
+        
+        <!-- Button Container -->
+        <div class="btn-container">
+            <a href="/quiz">Start Quiz</a>
+            <a href="/help">Need Help?</a>
+            <a href="/rules">View Rules</a>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions -->
+    <div class="container">
+        <div class="info-container">
+            <h2>Terms and Conditions</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor mauris non quam scelerisque, et fermentum metus placerat. Sed interdum, libero et congue tincidunt, ligula orci facilisis quam, in vulputate nunc lorem id leo.</p>
+            <p>Integer a enim eget ligula dignissim rhoncus. Proin varius augue vitae tortor tincidunt feugiat. Nam non velit ac elit placerat semper vel ac libero. Aliquam erat volutpat. Nullam sodales lorem sit amet tellus dignissim, at pharetra libero tincidunt. Vestibulum tempor felis nec lectus lobortis, in semper sem vehicula.</p>
+        </div>
+    </div>
+
+    <!-- Back to Homepage Button -->
+    <div class="container">
+        <a href="/homepage" class="back-btn">Back to Homepage</a>
+    </div>
+</body>
+</html>
