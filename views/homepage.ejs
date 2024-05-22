@@ -269,7 +269,7 @@
             text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* box-shadow: 0 4px 8px 0; */
         }
 
         .flip-card:hover .flip-card-inner {
@@ -285,8 +285,14 @@
             backface-visibility: hidden;
         }
 
+        .flip-card-front,
+        .flip-card-back img{
+            width: 100%;
+            height: 100%;
+        }
+
         .flip-card-front {
-            background-color: #bbb;
+            /* background-color: #bbb; */
             color: black;
         }
 
@@ -325,7 +331,7 @@
                     </li>
                     <!-- Quiz Compiler -->
                     <li class="nav-item">
-                        <a href="/quiz_homepage">Quiz</a>
+                        <a class="nav-link" href="/quiz_homepage">Quiz</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/compiler">Compiler</a>
@@ -360,29 +366,31 @@
     <!-- companies section -->
 
     <section class="company" id="company">
-        <h1 class="heading"><span>Companies</span></h1>
+        <h1 class="heading"><span>Features</span></h1>
         <div class="flip-card-container">
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://w7.pngwing.com/pngs/453/64/png-transparent-cisco-systems-computer-network-organization-logo-nasdaq-csco-others-computer-network-text-trademark-thumbnail.png"
+                    <img src="https://codeinterview.io/landing-assets/img/img-programing.png"
                         alt="Avatar" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>Cisco</h1>
-                    <p>Cisco Systems, Inc. is a leading networking company best known as a manufacturer and vendor of networking equipment. </p>
+                    <h1>Coding Languages</h1>
+                    <br>
+                    <p>Run code in any of the popular languages and see output in real time. It all happens in your browser, no installations needed. </p>
                 </div>
             </div>
         </div>
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNbwz_1hkxF6Cvb699qii3HVopVkWO6Uwbno2w0QHfCQ&s"
+                    <img src="https://codeinterview.io/landing-assets/img/img-audio-video.png"
                         alt="Avatar" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>Amazon</h1>
-                    <p>Amazon was founded by Jeff Bezos from his garage in Bellevue, Washington, on July 5, 1994. Initially an online marketplace for books, it has expanded into a multitude of product categories: a strategy that has earned it the moniker "the everything store".</p>
+                    <h1>Audio & Video</h1>
+                    <br>
+                    <p>It's like Zoom, only with an online collaborative code editor that's easy to use for you and candidates.</p>
                     
                 </div>
             </div>
@@ -390,12 +398,13 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://www.kindpng.com/picc/m/85-850632_microsoft-logo-modified-microsoft-corporation-multinational-companies-india.png"
+                    <img src="https://codeinterview.io/landing-assets/img/img-code-editor.png"
                         alt="Avatar" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>Microsoft</h1>
-                    <p>Microsoft is the largest vendor of computer software in the world. It is also a leading provider of cloud computing services, video games, computer and gaming hardware, search and other online services. </p>
+                    <h1>Code Editor</h1>
+                    <br>
+                    <p>Familiar interface with features like syntax highlighting, code completion and Vim/Emacs key bindings.</p>
                     
                 </div>
             </div>
@@ -403,12 +412,13 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBBgSffC1E391-WLL8VL8qPTL8MnUk4PUmgWeZ5oBG-Q&s"
+                    <img src="https://codeinterview.io/landing-assets/img/img-time-to-hire.png"
                         alt="Avatar" style="width:300px;height:300px;">
                 </div>
                 <div class="flip-card-back">
-                    <h1>Google</h1>
-                    <p>Our mission is to organize the world's information and make it universally accessible and useful.</p>
+                    <h1>Reduce Time-to-Hire</h1>
+                    <br>
+                    <p>Involve the right stakeholders at the right time in one simple yet powerful recruitment tool. Find top candidates faster and minimize wasted time to drastically speed up hiring.</p>
                 </div>
             </div>
         </div>
@@ -421,7 +431,7 @@
         <div class="box-container">
             <div class="box">
                 <div class="image">
-                    <img src="data:image/png;base64,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"
+                    <img src="https://codeinterview.io/landing-assets/img/img-simplify-decision.png"
                         alt="" srcset="">
                 </div>
             </div>
