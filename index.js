@@ -23,6 +23,8 @@ const JDoodleClientSecret = 'd92517cf50719f1c29a2c96ef2ed4469bca5859b2715e582021
 const users = new Map();
 let lifeline50 = 1;
 let lifelineSkip = 1;
+const multer = require('multer');
+
 
 function calculatePrize(answers) {
   // Implement prize calculation logic here
@@ -71,6 +73,7 @@ app.get('/quiz_homepage', requireLogin, async (req, res) => {
   res.render('quiz_homepage');
 });
 
+
 app.get('/help', (req, res) => {
   res.render('help');
 });
@@ -113,6 +116,30 @@ function calculatePrize(correctAnswers) {
   const pointsPerCorrectAnswer = 100;
   return correctAnswers * pointsPerCorrectAnswer;
 }
+
+
+app.get('/profile', requireLogin, (req, res) => {
+  res.render('profile');
+});
+
+app.post('/profile', requireLogin, async (req, res) => {
+  const { fullName, gender, dateOfBirth, address, qualifications } = req.body;
+  const userId = req.session.user._id; // Assuming you store user ID in session
+  try {
+    // Update the user's profile information in the database
+    await User.findByIdAndUpdate(userId, {
+      fullName,
+      gender,
+      dateOfBirth,
+      address,
+      qualifications
+    });
+    res.redirect('/homepage'); // Redirect to homepage after updating profile
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error updating profile');
+  }
+});
 
 
 app.post('/signup', async (req, res) => {
