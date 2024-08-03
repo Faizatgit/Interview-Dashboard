@@ -7,12 +7,18 @@ const User = require('./models/user.js');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const { exec } = require('child_process');
+const Submission = require('./models/submission.js');
 const fs = require('fs');
+const axios = require('axios');
 
 const app = express();
 const server = http.createServer(app);
 const io = new SocketIO(server);
 const PORT = 3000;
+
+const JDoodleClientId = '2fb0ea1d945285f511930d17f8e4caaf';
+const JDoodleClientSecret = 'd92517cf50719f1c29a2c96ef2ed4469bca5859b2715e5820213bd66b7ca4cc2';
 
 const users = new Map();
 let lifeline50 = 1;
@@ -196,6 +202,44 @@ app.post('/logout', (req, res) => {
     }
     res.redirect('/login');
   });
+});
+
+app.get('/compiler',(req,res)=>{
+  res.render('compiler');
+});
+
+// Route to handle code submission
+app.post('/compile', async (req, res) => {
+  const { code, language, input } = req.body;
+
+  // JDoodle language mappings
+  const languageMappings = {
+      javascript: { versionIndex: '0', script: 'nodejs' },
+      python: { versionIndex: '3', script: 'python3' },
+      // Add more mappings as needed
+  };
+
+  const languageConfig = languageMappings[language];
+
+  if (!languageConfig) {
+      return res.status(400).send('Unsupported language');
+  }
+
+  try {
+      const response = await axios.post('https://api.jdoodle.com/v1/execute', {
+          clientId: JDoodleClientId,
+          clientSecret: JDoodleClientSecret,
+          script: code,
+          language: languageConfig.script,
+          versionIndex: languageConfig.versionIndex,
+          stdin: input,
+      });
+
+      res.send(response.data.output);
+  } catch (error) {
+      console.error('Error:', error);
+      res.status(500).send('Error executing code');
+  }
 });
 
 server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
